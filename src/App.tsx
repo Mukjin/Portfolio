@@ -66,7 +66,32 @@ function Introduce() {
 
   return (
     <section id="introduce" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-16 text-center md:text-left"
+      >
+        <h3 className="text-3xl md:text-5xl font-extrabold text-slate-800 tracking-tight leading-tight">
+          안녕하세요, <br className="md:hidden" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">
+            백엔드 개발자 임진묵
+          </span> 입니다.
+        </h3>
+        <div className="mt-6 space-y-3 text-slate-600 text-lg md:text-xl font-medium leading-relaxed">
+          <p>
+            '좋은 개발자는 깊이 고민하는 사람'이라는 믿음으로 끊임없이 배우고 성장합니다.
+          </p>
+          <p className="text-base md:text-lg text-slate-500">
+            단순히 표면적인 에러 해결에 그치지 않고, 문제의 <strong className="text-blue-600 font-semibold">근본적인 원인</strong>을 명확하게 진단합니다. <br className="hidden md:block" />
+            해결을 위해 다양한 접근 방식의 <strong className="text-blue-600 font-semibold">장단점</strong>을 비교 분석하여 최적의 기술을 선택하며, <br className="hidden md:block" />
+            적용 후에도 <strong className="text-blue-600 font-semibold">예상치 못한 부작용은 없는지 끝까지 검증</strong>하며 견고한 시스템을 만들어갑니다.
+          </p>
+        </div>
+      </motion.div>
+
       <SectionHeading>Introduce</SectionHeading>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {stories.map((story, idx) => (
           <motion.div
@@ -195,60 +220,64 @@ function ProjectList() {
 function Experience() {
   return (
     <section id="experience" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div>
-          <SectionHeading>Experience</SectionHeading>
-          <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-sm border-l-4 border-l-blue-500">
-              <div className="text-blue-600 text-sm font-mono mb-2">2024.11 - 2025.06 (8개월)</div>
-              <h4 className="text-slate-800 font-bold text-lg mb-2">Goorm 백엔드 부트캠프</h4>
-              <div className="space-y-3 text-sm text-slate-600 leading-relaxed mt-4">
-                <p>Java 언어의 기본 문법부터 Spring Framework의 심화 개념까지 학습하며 RESTful API 설계 및 구현 역량을 기르고, 데이터베이스 설계와 ORM을 활용한 효율적인 데이터 관리 방법을 익혔습니다.</p>
-                <p>실제 소프트웨어 버전 기반 클론 코딩과 디버깅 실습을 통해 실시간 버그를 해결하고, 고객 요구사항을 반영한 백엔드 시스템 설계 및 프론트엔드 연동을 경험하며 실무적인 문제 해결 능력을 키웠습니다.</p>
-                <p>서버 성능 진단, 코드 및 쿼리 최적화, 캐싱 적용 등을 통해 시스템 효율을 높이고, 성능 모니터링 도구를 활용한 실시간 서버 상태 점검 및 클라우드 환경에서의 대규모 서비스 배포·운영 능력을 배양했습니다.</p>
-              </div>
+      <div>
+        <SectionHeading>Experience</SectionHeading>
+        <div className="space-y-6">
+          <div className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-sm border-l-4 border-l-blue-500">
+            <div className="text-blue-600 font-mono mb-2">2024.11 - 2025.06 (8개월)</div>
+            <h4 className="text-slate-800 font-bold text-2xl mb-2">Goorm 백엔드 부트캠프</h4>
+            <div className="space-y-3 text-slate-700 leading-relaxed mt-4">
+              <p>Java 언어의 기본 문법부터 Spring Framework의 심화 개념까지 학습하며 RESTful API 설계 및 구현 역량을 기르고, 데이터베이스 설계와 ORM을 활용한 효율적인 데이터 관리 방법을 익혔습니다.</p>
+              <p>실제 소프트웨어 버전 기반 클론 코딩과 디버깅 실습을 통해 실시간 버그를 해결하고, 고객 요구사항을 반영한 백엔드 시스템 설계 및 프론트엔드 연동을 경험하며 실무적인 문제 해결 능력을 키웠습니다.</p>
+              <p>서버 성능 진단, 코드 및 쿼리 최적화, 캐싱 적용 등을 통해 시스템 효율을 높이고, 성능 모니터링 도구를 활용한 실시간 서버 상태 점검 및 클라우드 환경에서의 대규모 서비스 배포·운영 능력을 배양했습니다.</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-sm">
-              <div className="text-slate-500 text-sm font-mono mb-2">2024.07 - 2024.08 (2개월)</div>
-              <h4 className="text-slate-800 font-bold text-lg mb-2">AI 스타트업 유니버시티</h4>
-              <div className="space-y-3 text-sm text-slate-600 leading-relaxed mt-4">
-                <p>창업 생태계 트렌드 분석, 비즈니스 모델 수립, 마케팅 전략 등 창업에 필요한 전반적인 지식을 습득하고, 파이썬을 활용한 데이터 전처리 및 머신러닝/딥러닝 모델 구축의 기초를 다졌습니다.</p>
-                <p>짧은 기간 내에 진행된 애자일(Agile) 기반의 프로토타이핑 프로젝트를 통해 기획부터 개발, 현업 개발자 멘토링까지 경험하며 요구사항 변화에 유연하게 대응하는 방법을 체득했습니다.</p>
-                <p>Spring Boot를 활용한 API 개발, Docker를 이용한 컨테이너 빌드 및 AWS 클라우드 인프라 구축 실습을 통해 AI 서비스를 실제 웹 애플리케이션으로 배포하고 운영하는 전체 사이클을 경험했습니다.</p>
-              </div>
+          </div>
+          <div className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-sm">
+            <div className="text-slate-500 font-mono mb-2">2024.07 - 2024.08 (2개월)</div>
+            <h4 className="text-slate-800 font-bold text-2xl mb-2">AI 스타트업 유니버시티</h4>
+            <div className="space-y-3 text-slate-700 leading-relaxed mt-4">
+              <p>창업 생태계 트렌드 분석, 비즈니스 모델 수립, 마케팅 전략 등 창업에 필요한 전반적인 지식을 습득하고, 파이썬을 활용한 데이터 전처리 및 머신러닝/딥러닝 모델 구축의 기초를 다졌습니다.</p>
+              <p>짧은 기간 내에 진행된 애자일(Agile) 기반의 프로토타이핑 프로젝트를 통해 기획부터 개발, 현업 개발자 멘토링까지 경험하며 요구사항 변화에 유연하게 대응하는 방법을 체득했습니다.</p>
+              <p>Spring Boot를 활용한 API 개발, Docker를 이용한 컨테이너 빌드 및 AWS 클라우드 인프라 구축 실습을 통해 AI 서비스를 실제 웹 애플리케이션으로 배포하고 운영하는 전체 사이클을 경험했습니다.</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-sm">
-              <div className="text-slate-500 text-sm font-mono mb-2">2023.06 - 2024.06 (12개월)</div>
-              <h4 className="text-slate-800 font-bold text-lg mb-2">GDSC (Google Developer Student Clubs)</h4>
-              <div className="space-y-3 text-sm text-slate-600 leading-relaxed mt-4">
-                <p>다양한 직군(프론트엔드, 기획, 디자인)과의 원활한 소통 방식 및 IT 연합 동아리 내 기술 공유 문화를 경험했습니다.</p>
-                <p>명확한 API 명세서 작성과 코드 리뷰를 도입하여 팀 프로젝트 초기 단계의 소통 비용 및 통합 오류를 감소시켰습니다.</p>
-                <p>주도적인 프로젝트 리딩 경험, 개발자 커뮤니티 네트워킹, 기술적 다양성을 수용하는 열린 태도를 함양했습니다.</p>
-              </div>
+          </div>
+          <div className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-sm">
+            <div className="text-slate-500 font-mono mb-2">2023.06 - 2024.06 (12개월)</div>
+            <h4 className="text-slate-800 font-bold text-2xl mb-2">GDSC (Google Developer Student Clubs)</h4>
+            <div className="space-y-3 text-slate-700 leading-relaxed mt-4">
+              <p>다양한 직군(프론트엔드, 기획, 디자인)과의 원활한 소통 방식 및 IT 연합 동아리 내 기술 공유 문화를 경험했습니다.</p>
+              <p>명확한 API 명세서 작성과 코드 리뷰를 도입하여 팀 프로젝트 초기 단계의 소통 비용 및 통합 오류를 감소시켰습니다.</p>
+              <p>주도적인 프로젝트 리딩 경험, 개발자 커뮤니티 네트워킹, 기술적 다양성을 수용하는 열린 태도를 함양했습니다.</p>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
 
-        <div>
-          <SectionHeading>Education</SectionHeading>
-          <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-sm flex flex-col sm:flex-row justify-between gap-4">
-              <div>
-                <h4 className="text-slate-800 font-bold text-lg mb-1">한국해양대학교(편입)</h4>
-                <p className="text-slate-600">컴퓨터공학과 졸업</p>
-              </div>
-              <div className="text-blue-600 font-mono text-sm sm:text-right">
-                2022.03 - 2025.02
-              </div>
+function Education() {
+  return (
+    <section id="education" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+      <div>
+        <SectionHeading>Education</SectionHeading>
+        <div className="space-y-6">
+          <div className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-sm flex flex-col sm:flex-row justify-between gap-4">
+            <div>
+              <h4 className="text-slate-800 font-bold text-2xl mb-1">한국해양대학교(편입)</h4>
+              <p className="text-slate-700 font-medium">컴퓨터공학과 졸업</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-sm flex flex-col sm:flex-row justify-between gap-4">
-              <div>
-                <h4 className="text-slate-800 font-bold text-lg mb-1">인하공업전문대학</h4>
-                <p className="text-slate-600">항공지리정보학과 졸업</p>
-              </div>
-              <div className="text-slate-500 font-mono text-sm sm:text-right">
-                2017.03 - 2021.02
-              </div>
+            <div className="text-blue-600 font-mono sm:text-right">
+              2022.03 - 2025.02
+            </div>
+          </div>
+          <div className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-sm flex flex-col sm:flex-row justify-between gap-4">
+            <div>
+              <h4 className="text-slate-800 font-bold text-2xl mb-1">인하공업전문대학</h4>
+              <p className="text-slate-700 font-medium">항공지리정보학과 졸업</p>
+            </div>
+            <div className="text-slate-500 font-mono sm:text-right">
+              2017.03 - 2021.02
             </div>
           </div>
         </div>
@@ -367,6 +396,7 @@ function Home() {
         <Skill />
         <ProjectList />
         <Experience />
+        <Education />
       </main>
       <Contact />
     </div>
