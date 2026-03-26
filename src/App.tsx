@@ -17,6 +17,7 @@ function Hero() {
       <div className="absolute inset-0 z-30 pointer-events-none">
         {/* Top Navigation Hotspot */}
         <div className="absolute top-[2%] left-1/2 -translate-x-1/2 w-[90%] md:w-[35%] h-[8%] flex pointer-events-auto">
+          <a href="#home" className="flex-1 h-full cursor-pointer outline-none focus:outline-none" aria-label="Home"></a>
           <a href="#introduce" className="flex-1 h-full cursor-pointer outline-none focus:outline-none" aria-label="Introduce"></a>
           <a href="#skill" className="flex-1 h-full cursor-pointer outline-none focus:outline-none" aria-label="Skill"></a>
           <a href="#project" className="flex-1 h-full cursor-pointer outline-none focus:outline-none" aria-label="Project"></a>
