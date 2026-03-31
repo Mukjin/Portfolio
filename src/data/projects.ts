@@ -10,6 +10,15 @@ export const projects = [
       "PostgreSQL JSONB 타입을 활용한 하이브리드 데이터 모델링으로 스키마 변경 없이 가변적인 AI 메타데이터를 수용하고 Read Latency 40% 단축",
       "Client-driven 상태 관리(Zustand)와 1.5초 Debounce 기반 동기화를 통해 데이터 정합성을 유지하며 불필요한 DB Write 요청 90% 감소",
       "MVP 검증 속도를 위해 Supabase를 도입하고, 향후 Spring Boot 기반 마이크로서비스로 추출 가능하도록 도메인 로직을 모듈화하여 확장성 고려"
+    ],
+    media: [
+      { type: 'image', url: '/images/FocusFlow1.png', caption: '메인 랜딩 페이지' },
+      { type: 'image', url: '/images/FocusFlow2.png', caption: '플랜 설정 및 AI 최적화' },
+      { type: 'image', url: '/images/FocusFlow3.png', caption: '캘린더 뷰' },
+      { type: 'image', url: '/images/FocusFlow4.png', caption: '칸반 보드 뷰' },
+      { type: 'image', url: '/images/FocusFlow5.png', caption: '학습 통계 대시보드' },
+      { type: 'image', url: '/images/FocusFlow6.png', caption: '상세 목록 뷰' },
+      { type: 'video', url: '/images/FocusFlow7.mp4', caption: '서비스 시연 영상' }
     ]
   },
   {

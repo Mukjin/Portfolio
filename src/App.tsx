@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Github, Mail, Phone, ExternalLink, Server, Database, Cloud, Activity, ArrowLeft } from 'lucide-react';
+import { Github, Mail, Phone, ExternalLink, Server, Database, Cloud, Activity, ArrowLeft, ImageIcon, PlayCircle } from 'lucide-react';
 import { cn } from './lib/utils';
 import { projects } from './data/projects';
 
@@ -334,7 +334,7 @@ function ProjectDetail() {
 
   return (
     <div className="min-h-screen bg-[#ebebeb] text-slate-900 selection:bg-blue-500/30 font-sans py-12 px-6 md:px-12">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <button 
           onClick={() => navigate('/')}
           className="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors mb-12 group"
@@ -348,12 +348,12 @@ function ProjectDetail() {
           animate={{ opacity: 1, y: 0 }}
           className="bg-white/80 backdrop-blur-sm border border-slate-200 shadow-sm rounded-3xl p-8 md:p-12"
         >
-          <div className="mb-10">
+          <div className="max-w-4xl mx-auto mb-10">
             <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">{project.title}</h1>
             <p className="text-xl text-blue-600 font-medium">{project.subtitle}</p>
           </div>
 
-          <div className="mb-12">
+          <div className="max-w-4xl mx-auto mb-12">
             <h2 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">
               <Server size={20} className="text-blue-500" />
               Tech Stack
@@ -367,7 +367,7 @@ function ProjectDetail() {
             </div>
           </div>
 
-          <div>
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-lg font-semibold text-slate-800 mb-6 flex items-center gap-2">
               <Activity size={20} className="text-blue-500" />
               Key Achievements
@@ -381,6 +381,50 @@ function ProjectDetail() {
               ))}
             </ul>
           </div>
+
+          {/* Media Section */}
+          {project.media && project.media.length > 0 && (
+            <div className="mt-20 border-t border-slate-200 pt-16">
+              <div className="max-w-4xl mx-auto mb-8">
+                <h2 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
+                  <ImageIcon size={20} className="text-blue-500" />
+                  Screenshots & Video
+                </h2>
+              </div>
+              <div className="space-y-16">
+                {project.media.map((item, i) => (
+                  <div key={i} className="flex flex-col items-center">
+                    <div className="w-full rounded-2xl overflow-hidden shadow-md bg-slate-100">
+                      {item.type === 'video' ? (
+                        <video 
+                          controls 
+                          playsInline
+                          className="w-full h-auto max-h-[85vh] object-contain"
+                          poster={item.poster}
+                        >
+                          <source src={item.url} type="video/mp4" />
+                          <source src={item.url} type="video/quicktime" />
+                          Your browser does not support the video tag.
+                        </video>
+                      ) : (
+                        <img 
+                          src={item.url} 
+                          alt={item.caption || `${project.title} screenshot ${i + 1}`} 
+                          className="w-full h-auto object-contain"
+                          loading="lazy"
+                        />
+                      )}
+                    </div>
+                    {item.caption && (
+                      <p className="mt-5 text-slate-600 font-medium text-center text-lg">
+                        {item.caption}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </motion.div>
       </div>
     </div>
