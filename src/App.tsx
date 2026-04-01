@@ -190,7 +190,8 @@ function ProjectList() {
             <div className="lg:w-1/3 flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl font-bold text-slate-800 mb-2">{project.title}</h3>
-                <p className="text-blue-600 font-medium mb-6">{project.subtitle}</p>
+                <p className="text-blue-600 font-medium mb-2">{project.subtitle}</p>
+                <p className="text-sm text-slate-500 mb-6">{project.period}</p>
               </div>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map(t => (
@@ -350,7 +351,8 @@ function ProjectDetail() {
         >
           <div className="max-w-4xl mx-auto mb-10">
             <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">{project.title}</h1>
-            <p className="text-xl text-blue-600 font-medium">{project.subtitle}</p>
+            <p className="text-xl text-blue-600 font-medium mb-2">{project.subtitle}</p>
+            <p className="text-md text-slate-500">{project.period}</p>
           </div>
 
           <div className="max-w-4xl mx-auto mb-12">

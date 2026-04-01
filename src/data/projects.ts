@@ -3,6 +3,7 @@ export const projects = [
     id: "focusflow-ai",
     title: "FocusFlow_AI",
     subtitle: "AI-Native Backend Architecture 기반 지능형 학습 플래너",
+    period: "2026.01 ~ 2026.02",
     tech: ["Supabase", "PostgreSQL", "Gemini API", "React", "Zustand"],
     achievements: [
       "Rule Engine과 LLM을 결합한 하이브리드 파이프라인 구축으로 AI 응답 스키마 일치율 100% 달성 및 예측 불가능한 오류 원천 차단",
@@ -18,13 +19,14 @@ export const projects = [
       { type: 'image', url: '/images/FocusFlow4.png', caption: '칸반 보드 뷰' },
       { type: 'image', url: '/images/FocusFlow5.png', caption: '학습 통계 대시보드' },
       { type: 'image', url: '/images/FocusFlow6.png', caption: '상세 목록 뷰' },
-      { type: 'image', url: '/images/FocusFlow7.gif', caption: '서비스 시연 영상' }
+      { type: 'video', url: '/images/FocusFlow7.mp4', caption: '서비스 시연 영상' }
     ]
   },
   {
     id: "bookforest",
     title: "BookForest",
     subtitle: "Spring Boot 기반 REST API 온라인 서점",
+    period: "2025.05 ~ 2025.06",
     tech: ["Java", "Spring", "JPA", "Redis", "MySQL", "Docker"],
     achievements: [
       "대규모 상품 데이터 조회 및 주문 처리 시 DB 조인 과부하 발생 → Redis 캐싱으로 DB 부하 70% 감소",
@@ -38,6 +40,7 @@ export const projects = [
     id: "refactor",
     title: "Refactor",
     subtitle: "Spring Boot 기반 인터파크 클론코딩 리팩터링",
+    period: "2025.03 ~ 2025.04",
     tech: ["Java", "Spring Boot", "JPA", "Redis", "MySQL", "Docker", "Github Actions", "JMeter"],
     achievements: [
       "복잡하게 얽힌 ERD 구조를 단순화하고 불필요한 외래키 제약을 제거하여 쿼리 성능 개선 기반 마련",
@@ -48,23 +51,10 @@ export const projects = [
     ]
   },
   {
-    id: "fresh-connect",
-    title: "프레쉬 커넥트 (Fresh-Connect)",
-    subtitle: "대량의 상품 정보 및 유저 활동 처리를 위한 성능 최적화 프로젝트",
-    tech: ["Spring Boot", "JPA", "Elasticsearch", "Redis", "WebSocket", "Prometheus", "Grafana"],
-    achievements: [
-      "통계 API(전체 매출, 주간 매출 등)의 N+1 문제 및 서버 메모리 과부하를 SQL 집계 함수와 DTO 반환으로 개선 (응답 시간 674ms → 27ms)",
-      "단순 LIKE 검색의 한계(느린 속도, 트래픽 집중 시 부하)를 극복하기 위해 Elasticsearch 도입, 단일 API 응답 속도 향상 및 위치 기반 검색 구현",
-      "외부 API(KAMIS) 호출 시 블로킹 방지를 위해 @Async와 CompletableFuture를 활용한 비동기 병렬 처리 적용 (실행 시간 26.6초 → 9.6초 단축)",
-      "Store 도메인 조회 시 페이징 쿼리 분리 및 Fetch Join을 활용하여 N+1 문제 해결",
-      "JWT 필터에서 발생하는 불필요한 연관 엔티티(Store) 로딩 문제를 FetchType.LAZY로 변경하여 TPS 약 6% 향상 (300/s → 320/s)",
-      "Prometheus와 Grafana를 연동하여 실시간 성능 지표 모니터링 환경 구축"
-    ]
-  },
-  {
     id: "giosk",
     title: "카페 키오스크 (GIOSK)",
     subtitle: "고객 요구 맞춤형 백엔드 협업 프로젝트",
+    period: "2025.04 ~ 2025.04(3주)",
     tech: ["Spring Boot", "PostgreSQL", "React", "Toss Payments", "Docker", "AWS EC2", "AWS S3"],
     achievements: [
       "Toss Payments 결제 위젯을 연동하고, 임시 주문 정보 저장 및 검증 프로세스를 구현하여 안전한 결제 흐름 구축",
