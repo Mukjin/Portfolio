@@ -18,7 +18,7 @@ export const projects = [
       { type: 'image', url: '/images/FocusFlow4.png', caption: '칸반 보드 뷰' },
       { type: 'image', url: '/images/FocusFlow5.png', caption: '학습 통계 대시보드' },
       { type: 'image', url: '/images/FocusFlow6.png', caption: '상세 목록 뷰' },
-      { type: 'video', url: '/images/FocusFlow7.gif', caption: '서비스 시연 영상' }
+      { type: 'image', url: '/images/FocusFlow7.gif', caption: '서비스 시연 영상' }
     ]
   },
   {
