@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Github, Mail, Phone, ExternalLink, Server, Database, Cloud, Activity, ArrowLeft, ImageIcon, PlayCircle } from 'lucide-react';
+import { Github, Mail, Phone, ExternalLink, Server, Database, Cloud, Activity, ArrowLeft, ImageIcon, PlayCircle, Monitor } from 'lucide-react';
 import { cn } from './lib/utils';
 import { projects } from './data/projects';
 
@@ -116,7 +116,12 @@ function Skill() {
     {
       title: "Backend",
       icon: <Server className="text-blue-600" />,
-      skills: ["Java", "Spring Boot", "JPA", "MyBatis", "Python", "React"]
+      skills: ["Java", "Spring Boot", "JPA", "MyBatis", "Python"]
+    },
+    {
+      title: "Frontend",
+      icon: <Monitor className="text-blue-600" />,
+      skills: ["HTML", "CSS", "JavaScript", "React"]
     },
     {
       title: "Database",
