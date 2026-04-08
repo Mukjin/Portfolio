@@ -211,7 +211,7 @@ function ProjectList() {
                 {project.achievements.map((ach, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-700">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
-                    <span className="leading-relaxed">{ach}</span>
+                    <span className="leading-relaxed whitespace-pre-wrap">{ach}</span>
                   </li>
                 ))}
               </ul>
@@ -383,7 +383,7 @@ function ProjectDetail() {
               {project.achievements.map((ach, i) => (
                 <li key={i} className="flex items-start gap-4 text-slate-700 bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
                   <span className="mt-1 w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
-                  <span className="leading-relaxed text-lg">{ach}</span>
+                  <span className="leading-relaxed text-lg whitespace-pre-wrap">{ach}</span>
                 </li>
               ))}
             </ul>

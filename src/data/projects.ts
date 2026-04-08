@@ -6,11 +6,10 @@ export const projects = [
     period: "2026.01 ~ 2026.02",
     tech: ["Supabase", "PostgreSQL", "Gemini API", "React", "Zustand"],
     achievements: [
-      "Rule Engine과 LLM을 결합한 하이브리드 파이프라인 구축으로 AI 응답 스키마 일치율 100% 달성 및 예측 불가능한 오류 원천 차단",
-      "Gemini API의 Google Search Grounding과 Robust JSON Parser를 도입하여 가짜 링크(Dead Link) 생성률 0%, 파싱 실패율 0%로 AI 데이터 신뢰성 확보",
-      "PostgreSQL JSONB 타입을 활용한 하이브리드 데이터 모델링으로 스키마 변경 없이 가변적인 AI 메타데이터를 수용하고 Read Latency 40% 단축",
-      "Client-driven 상태 관리(Zustand)와 1.5초 Debounce 기반 동기화를 통해 데이터 정합성을 유지하며 불필요한 DB Write 요청 90% 감소",
-      "MVP 검증 속도를 위해 Supabase를 도입하고, 향후 Spring Boot 기반 마이크로서비스로 추출 가능하도록 도메인 로직을 모듈화하여 확장성 고려"
+      "LLM 단독 사용 시 출력 구조가 불규칙하고 환각(Hallucination)이 발생하여 JSON 파싱이 자주 실패하는 문제를 해결하기 위해, Rule Engine으로 플랜 스켈레톤을 먼저 생성하고 Gemini 호출 시 Search Grounding을 강제 적용한 뒤 정규식 기반 재귀 파서를 구현\n\n→ AI 응답 스키마 일치율 100%, Dead Link 0%, JSON 파싱 실패율 0% 달성",
+      "AI가 생성하는 비정형 메타데이터(난이도, 세부 단계, 참고 링크 등)를 정규화 모델에 억지로 넣을 경우 스키마 변경 비용과 JOIN 복잡도가 급증할 것으로 판단하여, 핵심 식별자만 정규화하고 가변 데이터는 PostgreSQL JSONB 컬럼에 저장하는 하이브리드 모델링 적용\n\n→ Read Latency 약 40% 단축 및 스키마 변경 없이 확장성 확보",
+      "캘린더와 칸반 보드 등 다중 뷰에서 발생하는 빈번한 상태 변경(Drag & Drop 등)으로 DB Write 폭주와 동기화 충돌이 발생하는 문제를 해결하기 위해 Zustand Optimistic UI와 1.5초 Debounce를 적용하여 최종 상태만 Upsert 처리\n\n→ 불필요한 DB Write 요청 90% 감소",
+      "학습 플랜 생성 시 매번 다른 구조가 나오는 비결정성 문제를 해결하기 위해 Rule Engine + LLM 하이브리드 파이프라인을 설계\n\n→ Rule Engine이 날짜·과목 비중 등 고정 뼈대를 만들고 LLM은 내부 컨텍스트만 채우도록 분리하여 결정론적 데이터 생성 보장"
     ],
     media: [
       { type: 'image', url: '/images/FocusFlow1.png', caption: '메인 랜딩 페이지' },
